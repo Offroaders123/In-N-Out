@@ -1,0 +1,11 @@
+{
+  "name": "in-n-out",
+  "version": "1.0.0",
+  "description": "Type definitions for ordering at In-N-Out!",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "author": "Brandon Bennett <offroaders123@gmail.com> (https://github.com/Offroaders123)",
+  "license": "MIT",
+  "sideEffects": false
+}
