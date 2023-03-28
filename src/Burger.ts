@@ -1,9 +1,9 @@
-import { Tomato } from "./condiments.js";
+import { Condiment } from "./Condiment.js";
 
 export class Burger {
-  #tomato: Tomato = null;
+  #tomato: Condiment = true;
 
-  set tomato(value: Tomato) {
+  set tomato(value: Condiment) {
     this.#tomato = value;
   }
 
@@ -15,4 +15,19 @@ export class Burger {
 export default Burger;
 
 const myBurger = new Burger();
-myBurger.tomato = "Tomato";
+myBurger.tomato = true;
+
+export type Condiments = (
+  | "Spread"
+  | "Lettuce"
+  | "Tomato"
+  | "Onion"
+  | "Grilled Onion"
+  | "Pickle"
+  | "Fried Mustard"
+  | "Whole Grilled Onion"
+  | "Raw Onion"
+  | "Raw Chopped Onion"
+  | "Chilies"
+  | "Salt"
+);

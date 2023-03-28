@@ -1,5 +1,3 @@
-import { Spread, Lettuce, Tomato, Onion, GrilledOnion } from "./condiments.js";
-
 export type Drink = SmallSoftDrink | MediumSoftDrink | LargeSoftDrink | ExtraLargeSoftDrink | Milk | RegularHotCocoa | LargeHotCocoa | RegularShake | LargeShake | ExtraLargeShake;
 
 export type SmallSoftDrink = `Small ${SoftDrink}`;
@@ -35,23 +33,3 @@ export type ChocolateShake = "Chocolate Shake";
 export type StrawberryShake = "Strawberry Shake";
 export type VanillaShake = "Vanilla Shake";
 export type NeapolitanShake = "Neapolitan Shake";
-
-export interface Burger {
-  spread: Spread;
-  lettuce: Lettuce;
-  tomato: Tomato;
-  onion: Onion;
-  grilledOnion: GrilledOnion;
-}
-
-export class DoubleDouble implements Burger {
-  spread = "Spread" as const;
-  lettuce = "Lettuce" as const;
-  tomato = "Tomato" as const;
-  onion = "Onion" as const;
-  grilledOnion = "Grilled Onion" as const;
-
-  constructor({ spread, lettuce, tomato, onion, grilledOnion }: Partial<Burger> = {}) {}
-}
-
-new DoubleDouble({ onion: "Onion" });
