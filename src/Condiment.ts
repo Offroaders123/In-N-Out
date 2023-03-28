@@ -1,7 +1,1 @@
-export type Condiment = (
-  | boolean
-  | "Very Light"
-  | "Light"
-  | "Extra"
-  | "Double Extra"
-);
+export type Condiment = boolean | "very-light" | "light" | "extra" | "double-extra";

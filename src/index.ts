@@ -1,3 +1,6 @@
+export * from "./Burger.js";
+export * from "./Condiment.js";
+
 export type Drink = SmallSoftDrink | MediumSoftDrink | LargeSoftDrink | ExtraLargeSoftDrink | Milk | RegularHotCocoa | LargeHotCocoa | RegularShake | LargeShake | ExtraLargeShake;
 
 export type SmallSoftDrink = `Small ${SoftDrink}`;
@@ -33,3 +36,11 @@ export type ChocolateShake = "Chocolate Shake";
 export type StrawberryShake = "Strawberry Shake";
 export type VanillaShake = "Vanilla Shake";
 export type NeapolitanShake = "Neapolitan Shake";
+
+import { Burger } from "./Burger.js";
+
+new Burger()
+  .setPickle()
+  .setRawChoppedOnion()
+  .setChilies()
+  .setSpread("extra");
