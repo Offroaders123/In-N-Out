@@ -37,10 +37,31 @@ export type StrawberryShake = "Strawberry Shake";
 export type VanillaShake = "Vanilla Shake";
 export type NeapolitanShake = "Neapolitan Shake";
 
-import { Burger } from "./Burger.js";
+import { Burger, Hamburger, Cheeseburger } from "./Burger.js";
 
 new Burger()
   .setPickle()
   .setRawChoppedOnion()
   .setChilies()
   .setSpread("extra");
+
+new Hamburger()
+  .setLettuce()
+  .setOnion()
+  .setMeat()
+  // @ts-expect-error
+  .setMeat(2)
+  // @ts-expect-error
+  .setCheese()
+
+new Cheeseburger()
+  .setSalt("extra")
+  .setChilies()
+  .setGrilledOnion()
+  .setMeat()
+  // @ts-expect-error
+  .setMeat(2)
+  .setCheese()
+  // @ts-expect-error
+  .setCheese(0)
+  .setPickle()

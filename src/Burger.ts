@@ -1,9 +1,15 @@
 import { Condiment } from "./Condiment.js";
 
+export type Buns = boolean | "no-toast" | "extra-toast";
+
+export type Meat = 0 | 1 | 2 | 3 | 4;
+
+export type Cheese = 0 | 1 | 2 | 3 | 4;
+
 export class Burger {
-  // #buns;
-  // #meat;
-  // #cheese;
+  #buns: Buns = false;
+  #meat: Meat = 0;
+  #cheese: Cheese = 0;
   #spread: Condiment = false;
   #lettuce: Condiment = false;
   #tomato: Condiment = false;
@@ -16,6 +22,21 @@ export class Burger {
   #rawChoppedOnion: Condiment = false;
   #chilies: Condiment = false;
   #salt: Condiment = false;
+
+  setBuns(value: Buns = true) {
+    this.#buns = value;
+    return this;
+  }
+
+  setMeat(value: Meat = 1) {
+    this.#meat = value;
+    return this;
+  }
+
+  setCheese(value: Cheese = 1) {
+    this.#cheese = value;
+    return this;
+  }
 
   setSpread(value: Condiment = true) {
     this.#spread = value;
@@ -78,9 +99,37 @@ export class Burger {
   }
 }
 
-export class Hamburger {}
+export class Hamburger extends Burger {
+  setMeat(value: Extract<Meat, 1> = 1) {
+    if (value !== 1){
+      throw new TypeError("Hamburger must have a single patty.");
+    }
+    return this;
+  }
 
-export class Cheeseburger {}
+  setCheese(value: Extract<Cheese, 0>) {
+    if (value !== 0){
+      throw new TypeError("Hamburger cannot have cheese.");
+    }
+    return this;
+  }
+}
+
+export class Cheeseburger extends Burger {
+  setMeat(value: Extract<Meat, 1> = 1) {
+    if (value !== 1){
+      throw new TypeError("Cheeseburger must have a single patty.");
+    }
+    return this;
+  }
+
+  setCheese(value: Exclude<Cheese, 0> = 1) {
+    if (value < 1){
+      throw new TypeError("Cheeseburger must have cheese.");
+    }
+    return this;
+  }
+}
 
 export class DoubleDouble {}
 
