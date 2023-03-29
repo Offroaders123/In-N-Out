@@ -104,14 +104,14 @@ export class Hamburger extends Burger {
     if (value !== 1){
       throw new TypeError("Hamburger must have a single patty.");
     }
-    return this;
+    return super.setMeat();
   }
 
   setCheese(value: Extract<Cheese, 0>) {
     if (value !== 0){
       throw new TypeError("Hamburger cannot have cheese.");
     }
-    return this;
+    return super.setCheese();
   }
 }
 
@@ -120,14 +120,14 @@ export class Cheeseburger extends Burger {
     if (value !== 1){
       throw new TypeError("Cheeseburger must have a single patty.");
     }
-    return this;
+    return super.setMeat();
   }
 
   setCheese(value: Exclude<Cheese, 0> = 1) {
     if (value < 1){
       throw new TypeError("Cheeseburger must have cheese.");
     }
-    return this;
+    return super.setCheese();
   }
 }
 
