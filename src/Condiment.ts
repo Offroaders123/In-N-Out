@@ -1,1 +1,0 @@
-export type Condiment = boolean | "very-light" | "light" | "extra" | "double-extra";

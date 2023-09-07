@@ -2,9 +2,16 @@
   "compilerOptions": {
     "rootDir": "./src",
     "outDir": "./dist",
-    "module": "ESNext",
+    "module": "NodeNext",
     "target": "ESNext",
+    "isolatedModules": true,
     "declaration": true,
-    "strict": true
+    "strict": true,
+    "noImplicitOverride": true,
+    "noPropertyAccessFromIndexSignature": true,
+    "noUncheckedIndexedAccess": true,
+    "allowUnreachableCode": false,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true
   }
 }
