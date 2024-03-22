@@ -38,9 +38,10 @@ export interface DoubleDouble extends Bunned, Cheesed<2 | 3 | 4>, Meated<2 | 3 |
 
 // };
 
-const myBurger2 = DoubleDouble();
+const myBurger2 = new DoubleDouble();
 console.log(myBurger2);
 
-function DoubleDouble(props: Partial<DoubleDouble> = {}): DoubleDouble {
-  return { toasted: 1, cheese: 2, meat: 2, cooked: 1, salted: 3, lettuce: 3, tomato: 3, spread: 3, ...props };
+function DoubleDouble(this: DoubleDouble, props: Partial<DoubleDouble> = {}): DoubleDouble {
+  Object.assign(this, { toasted: 1, cheese: 2, meat: 2, cooked: 1, salted: 3, lettuce: 3, tomato: 3, spread: 3, ...props });
+  return this;
 }
