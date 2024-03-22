@@ -20,6 +20,16 @@ export interface Tomatoed {
   tomato: 0 | 1 | 2 | 3 | 4 | 5;
 }
 
-export interface Spread {
+export interface Spreaded {
   spread: 0 | 1 | 2 | 3 | 4 | 5;
 }
+
+export interface Chillied {
+  chillies: 0 | 1 | 2 | 3 | 4 | 5;
+}
+
+export interface GrilledOnioned {
+  grilledOnion: 0 | 1 | 2 | 3 | 4 | 5;
+}
+
+export interface DoubleDouble extends Bunned, Cheesed<2 | 3 | 4>, Meated<2 | 3 | 4>, Lettuced, Tomatoed, Spreaded, Partial<Chillied>, Partial<GrilledOnioned> {}
