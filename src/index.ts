@@ -9,29 +9,49 @@ export interface Cheesed<T extends 1 | 2 | 3 | 4> {
 export interface Meated<T extends 1 | 2 | 3 | 4> {
   meat: T;
   cooked: 1 | 2 | 3;
-  salted: ToppingLevel;
+  salted: Topping;
 }
 
-export type Topping<K extends [keyof ToppingMap, true?] = [keyof ToppingMap]> = K[1] extends true ? Partial<Pick<ToppingMap, K[0]>> : Pick<ToppingMap, K[0]>;
-
-export interface ToppingMap {
-  lettuce: ToppingLevel;
-  tomato: ToppingLevel;
-  spread: ToppingLevel;
-  chillies: ToppingLevel;
-  grilledOnion: ToppingLevel;
-  onion: ToppingLevel;
-  wholeGrilledOnion: ToppingLevel;
-  rawOnion: ToppingLevel;
-  rawChoppedOnion: ToppingLevel;
-  choppedOnion: ToppingLevel;
+export interface Lettuced {
+  lettuce: Topping;
 }
 
-export type ToppingLevel = 0 | 1 | 2 | 3 | 4 | 5;
+export interface Tomatoed {
+  tomato: Topping;
+}
 
-export interface DoubleDouble extends Bunned, Cheesed<2 | 3 | 4>, Meated<2 | 3 | 4>, Topping<["chillies", true]> {}
+export interface Spreaded {
+  spread: Topping;
+}
 
-declare const hi: DoubleDouble;
-hi.chillies
+export interface Chillied {
+  chillies: Topping;
+}
 
-// export interface DoubleDouble extends Bunned, Cheesed<2 | 3 | 4>, Meated<2 | 3 | 4>, Lettuced, Tomatoed, Spreaded, Partial<Chillied>, Partial<GrilledOnioned>, Partial<Onioned>, Partial<WholeGrilledOnioned>, Partial<RawOnioned>, Partial<RawChoppedOnioned>, Partial<ChoppedOnioned> {}
+export interface GrilledOnioned {
+  grilledOnion: Topping;
+}
+
+export type Topping = 0 | 1 | 2 | 3 | 4 | 5;
+
+export interface DoubleDouble extends Bunned, Cheesed<2 | 3 | 4>, Meated<2 | 3 | 4>, Lettuced, Tomatoed, Spreaded, Partial<Chillied>, Partial<GrilledOnioned>, Partial<Onioned>, Partial<WholeGrilledOnioned>, Partial<RawOnioned>, Partial<RawChoppedOnioned>, Partial<ChoppedOnioned> {}
+
+export interface Onioned {
+  onion: Topping;
+}
+
+export interface WholeGrilledOnioned {
+  wholeGrilledOnion: Topping;
+}
+
+export interface RawOnioned {
+  rawOnion: Topping;
+}
+
+export interface RawChoppedOnioned {
+  rawChoppedOnion: Topping;
+}
+
+export interface ChoppedOnioned {
+  choppedOnion: Topping;
+}
