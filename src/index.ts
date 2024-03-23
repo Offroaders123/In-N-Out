@@ -9,39 +9,49 @@ export interface Cheesed<T extends 1 | 2 | 3 | 4> {
 export interface Meated<T extends 1 | 2 | 3 | 4> {
   meat: T;
   cooked: 1 | 2 | 3;
-  salted: 0 | 1 | 2 | 3 | 4 | 5;
+  salted: Topping;
 }
 
 export interface Lettuced {
-  lettuce: 0 | 1 | 2 | 3 | 4 | 5;
+  lettuce: Topping;
 }
 
 export interface Tomatoed {
-  tomato: 0 | 1 | 2 | 3 | 4 | 5;
+  tomato: Topping;
 }
 
 export interface Spreaded {
-  spread: 0 | 1 | 2 | 3 | 4 | 5;
+  spread: Topping;
 }
 
 export interface Chillied {
-  chillies: 0 | 1 | 2 | 3 | 4 | 5;
+  chillies: Topping;
 }
 
 export interface GrilledOnioned {
-  grilledOnion: 0 | 1 | 2 | 3 | 4 | 5;
+  grilledOnion: Topping;
 }
 
-export interface DoubleDouble extends Bunned, Cheesed<2 | 3 | 4>, Meated<2 | 3 | 4>, Lettuced, Tomatoed, Spreaded, Partial<Chillied>, Partial<GrilledOnioned> {}
+export type Topping = 0 | 1 | 2 | 3 | 4 | 5;
 
-// const myBurger: DoubleDouble = {
+export interface DoubleDouble extends Bunned, Cheesed<2 | 3 | 4>, Meated<2 | 3 | 4>, Lettuced, Tomatoed, Spreaded, Partial<Chillied>, Partial<GrilledOnioned>, Partial<Onioned>, Partial<WholeGrilledOnioned>, Partial<RawOnioned>, Partial<RawChoppedOnioned>, Partial<ChoppedOnioned> {}
 
-// };
+export interface Onioned {
+  onion: Topping;
+}
 
-const myBurger2 = new DoubleDouble();
-console.log(myBurger2);
+export interface WholeGrilledOnioned {
+  wholeGrilledOnion: Topping;
+}
 
-function DoubleDouble(this: DoubleDouble, props: Partial<DoubleDouble> = {}): DoubleDouble {
-  Object.assign(this, { toasted: 1, cheese: 2, meat: 2, cooked: 1, salted: 3, lettuce: 3, tomato: 3, spread: 3, ...props });
-  return this;
+export interface RawOnioned {
+  rawOnion: Topping;
+}
+
+export interface RawChoppedOnioned {
+  rawChoppedOnion: Topping;
+}
+
+export interface ChoppedOnioned {
+  choppedOnion: Topping;
 }
