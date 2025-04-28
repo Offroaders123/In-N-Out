@@ -1,10 +1,10 @@
-export enum Toast {
+export enum Toasted {
   Regular = "Regular",
   Light = "Light",
   Extra = "Extra"
 }
 
-export interface Bunnable<T extends Toast = Toast.Regular> {
+export interface Bunnable<T extends Toasted> {
   toasted: T;
 }
 
@@ -26,7 +26,7 @@ export enum Meat {
   Four = 4
 }
 
-export enum Cook {
+export enum Cooked {
   Regular = "Regular",
   Well = "Well",
   ExtraWell = "ExtraWell"
@@ -34,7 +34,7 @@ export enum Cook {
 
 export interface Meatable<T extends Meat> {
   meat: T;
-  cooked: Cook;
+  cooked: Cooked;
   salted: Topping;
 }
 
@@ -66,7 +66,7 @@ export enum Topping {
   ExtraWell = "ExtraWell"
 }
 
-export interface DoubleDouble extends Bunnable, Cheesable<2 | 3 | 4>, Meatable<2 | 3 | 4>, Lettuceable, Tomatoeable, Spreadable, Partial<Chilliable>, Partial<GrilledOnionable>, Partial<Onionable>, Partial<WholeGrilledOnionable>, Partial<RawOnionable>, Partial<RawChoppedOnionable>, Partial<ChoppedOnionable> {}
+export interface DoubleDouble extends Bunnable<Toasted>, Cheesable<2 | 3 | 4>, Meatable<2 | 3 | 4>, Lettuceable, Tomatoeable, Spreadable, Partial<Chilliable>, Partial<GrilledOnionable>, Partial<Onionable>, Partial<WholeGrilledOnionable>, Partial<RawOnionable>, Partial<RawChoppedOnionable>, Partial<ChoppedOnionable> {}
 
 export interface Onionable {
   onion: Topping;
