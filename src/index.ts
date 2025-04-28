@@ -38,46 +38,46 @@ export interface Meatable<T extends Meat> {
   salted: Topping;
 }
 
-export interface Lettuced {
+export interface Lettuceable {
   lettuce: Topping;
 }
 
-export interface Tomatoed {
+export interface Tomatoeable {
   tomato: Topping;
 }
 
-export interface Spreaded {
+export interface Spreadable {
   spread: Topping;
 }
 
-export interface Chillied {
+export interface Chilliable {
   chillies: Topping;
 }
 
-export interface GrilledOnioned {
+export interface GrilledOnionable {
   grilledOnion: Topping;
 }
 
 export type Topping = 0 | 1 | 2 | 3 | 4 | 5;
 
-export interface DoubleDouble extends Bunnable, Cheesable<2 | 3 | 4>, Meatable<2 | 3 | 4>, Lettuced, Tomatoed, Spreaded, Partial<Chillied>, Partial<GrilledOnioned>, Partial<Onioned>, Partial<WholeGrilledOnioned>, Partial<RawOnioned>, Partial<RawChoppedOnioned>, Partial<ChoppedOnioned> {}
+export interface DoubleDouble extends Bunnable, Cheesable<2 | 3 | 4>, Meatable<2 | 3 | 4>, Lettuceable, Tomatoeable, Spreadable, Partial<Chilliable>, Partial<GrilledOnionable>, Partial<Onionable>, Partial<WholeGrilledOnionable>, Partial<RawOnionable>, Partial<RawChoppedOnionable>, Partial<ChoppedOnionable> {}
 
-export interface Onioned {
+export interface Onionable {
   onion: Topping;
 }
 
-export interface WholeGrilledOnioned {
+export interface WholeGrilledOnionable {
   wholeGrilledOnion: Topping;
 }
 
-export interface RawOnioned {
+export interface RawOnionable {
   rawOnion: Topping;
 }
 
-export interface RawChoppedOnioned {
+export interface RawChoppedOnionable {
   rawChoppedOnion: Topping;
 }
 
-export interface ChoppedOnioned {
+export interface ChoppedOnionable {
   choppedOnion: Topping;
 }
