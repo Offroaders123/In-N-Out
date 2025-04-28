@@ -1,14 +1,40 @@
-export interface Bunned {
-  toasted: 0 | 1 | 2;
+export enum Toast {
+  Regular = "Regular",
+  Light = "Light",
+  Extra = "Extra"
 }
 
-export interface Cheesed<T extends 1 | 2 | 3 | 4> {
+export interface Bunnable<T extends Toast = Toast.Regular> {
+  toasted: T;
+}
+
+export enum Cheese {
+  One = 1,
+  Two = 2,
+  Three = 3,
+  Four = 4
+}
+
+export interface Cheesable<T extends Cheese> {
   cheese: T;
 }
 
-export interface Meated<T extends 1 | 2 | 3 | 4> {
+export enum Meat {
+  One = 1,
+  Two = 2,
+  Three = 3,
+  Four = 4
+}
+
+export enum Cook {
+  Regular = "Regular",
+  Well = "Well",
+  ExtraWell = "ExtraWell"
+}
+
+export interface Meatable<T extends Meat> {
   meat: T;
-  cooked: 1 | 2 | 3;
+  cooked: Cook;
   salted: Topping;
 }
 
@@ -34,7 +60,7 @@ export interface GrilledOnioned {
 
 export type Topping = 0 | 1 | 2 | 3 | 4 | 5;
 
-export interface DoubleDouble extends Bunned, Cheesed<2 | 3 | 4>, Meated<2 | 3 | 4>, Lettuced, Tomatoed, Spreaded, Partial<Chillied>, Partial<GrilledOnioned>, Partial<Onioned>, Partial<WholeGrilledOnioned>, Partial<RawOnioned>, Partial<RawChoppedOnioned>, Partial<ChoppedOnioned> {}
+export interface DoubleDouble extends Bunnable, Cheesable<2 | 3 | 4>, Meatable<2 | 3 | 4>, Lettuced, Tomatoed, Spreaded, Partial<Chillied>, Partial<GrilledOnioned>, Partial<Onioned>, Partial<WholeGrilledOnioned>, Partial<RawOnioned>, Partial<RawChoppedOnioned>, Partial<ChoppedOnioned> {}
 
 export interface Onioned {
   onion: Topping;
