@@ -58,7 +58,13 @@ export interface GrilledOnionable {
   grilledOnion: Topping;
 }
 
-export type Topping = 0 | 1 | 2 | 3 | 4 | 5;
+export enum Topping {
+  Regular = "Regular",
+  Light = "Light",
+  ExtraLight = "ExtraLight",
+  Well = "Well",
+  ExtraWell = "ExtraWell"
+}
 
 export interface DoubleDouble extends Bunnable, Cheesable<2 | 3 | 4>, Meatable<2 | 3 | 4>, Lettuceable, Tomatoeable, Spreadable, Partial<Chilliable>, Partial<GrilledOnionable>, Partial<Onionable>, Partial<WholeGrilledOnionable>, Partial<RawOnionable>, Partial<RawChoppedOnionable>, Partial<ChoppedOnionable> {}
 
