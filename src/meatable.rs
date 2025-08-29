@@ -1,20 +1,20 @@
-import type { Topping } from "./Topping.js";
+use crate::topping::Topping;
 
-export enum Meat {
-  One = 1,
-  Two = 2,
-  Three = 3,
-  Four = 4
+pub enum Meat {
+    One = 1,
+    Two = 2,
+    Three = 3,
+    Four = 4,
 }
 
-export enum Cooked {
-  Regular = "Regular",
-  Well = "Well",
-  ExtraWell = "ExtraWell"
+pub enum Cooked {
+    Regular,
+    Well,
+    ExtraWell,
 }
 
-export interface Meatable<T extends Meat> {
-  meat: T;
-  cooked: Cooked;
-  salted: Topping;
+pub struct Meatable {
+    meat: Meat,
+    cooked: Cooked,
+    salted: Topping,
 }

@@ -1,9 +1,9 @@
-export enum Toasted {
-  Regular = "Regular",
-  Light = "Light",
-  Extra = "Extra"
+pub enum Toasted {
+    Regular,
+    Light,
+    Extra,
 }
 
-export interface Bunnable<T extends Toasted> {
-  toasted: T;
+pub struct Bunnable {
+    toasted: Toasted,
 }

@@ -1,47 +1,47 @@
-export interface Lettuceable {
-  lettuce: Topping;
+pub struct Lettuceable {
+    lettuce: Topping,
 }
 
-export interface Tomatoeable {
-  tomato: Topping;
+pub struct Tomatoeable {
+    tomato: Topping,
 }
 
-export interface Spreadable {
-  spread: Topping;
+pub struct Spreadable {
+    spread: Topping,
 }
 
-export interface Chilliable {
-  chillies: Topping;
+pub struct Chilliable {
+    chillies: Topping,
 }
 
-export interface GrilledOnionable {
-  grilledOnion: Topping;
+pub struct GrilledOnionable {
+    grilled_onion: Topping,
 }
 
-export enum Topping {
-  Regular = "Regular",
-  Light = "Light",
-  ExtraLight = "ExtraLight",
-  Well = "Well",
-  ExtraWell = "ExtraWell"
+pub enum Topping {
+    Regular,
+    Light,
+    ExtraLight,
+    Well,
+    ExtraWell,
 }
 
-export interface Onionable {
-  onion: Topping;
+pub struct Onionable {
+    onion: Topping,
 }
 
-export interface WholeGrilledOnionable {
-  wholeGrilledOnion: Topping;
+pub struct WholeGrilledOnionable {
+    whole_grilled_onion: Topping,
 }
 
-export interface RawOnionable {
-  rawOnion: Topping;
+pub struct RawOnionable {
+    raw_onion: Topping,
 }
 
-export interface RawChoppedOnionable {
-  rawChoppedOnion: Topping;
+pub struct RawChoppedOnionable {
+    raw_chopped_onion: Topping,
 }
 
-export interface ChoppedOnionable {
-  choppedOnion: Topping;
+pub struct ChoppedOnionable {
+    chopped_onion: Topping,
 }
